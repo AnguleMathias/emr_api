@@ -63,11 +63,11 @@ class Query(graphene.ObjectType):
         response = PaginatedUsers(**kwargs)
         return response
 
-    @Auth.user_roles('Admin', 'Doctor')
+    @Auth.user_roles('Admin', 'Doctor', 'Patient')
     def resolve_user(self, info, email):
         return UserModel.query.filter_by(email=email).first()
 
-    @Auth.user_roles('Admin', 'Doctor')
+    @Auth.user_roles('Admin', 'Doctor', 'Patient')
     def resolve_user_by_name(self, info, user_name):
         user_list = []
         user_name = ''.join(user_name.split()).lower()
