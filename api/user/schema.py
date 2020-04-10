@@ -36,7 +36,7 @@ class CreateUser(graphene.Mutation):
     def mutate(self, info, **kwargs):
         user = UserModel(**kwargs)
         if not verify_email(user.email):
-            raise GraphQLError("This email is not allowed")
+            raise GraphQLError("Enter a valid email")
         payload = {
             'model': UserModel, 'field': 'email', 'value':  kwargs['email']
         }
