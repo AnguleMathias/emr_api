@@ -4,7 +4,7 @@ from graphql import GraphQLError
 from api.user.schema import User
 from api.user.models import User as UserModel
 from helpers.auth.authentication import Auth
-from helpers.user_filter.user_filter import user_filter
+from helpers.user_filter.user_filter import filter_by_role
 from helpers.pagination.paginate import Paginate, validate_page
 
 
@@ -19,7 +19,7 @@ class PaginatedUsers(Paginate):
         per_page = self.per_page
         query = User.get_query(info)
         active_user = query.filter(UserModel.state == "active")
-        exact_query = user_filter(active_user, self.filter_data)
+        exact_query = filter_by_role(active_user, self.filter_data)
         if not page:
             return exact_query.order_by(func.lower(UserModel.email)).all()
         page = validate_page(page)

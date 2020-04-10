@@ -5,11 +5,6 @@ from sqlalchemy import event
 
 
 def update_entity_fields(entity, **kwargs):
-    """
-    Function to update an entities fields
-    :param kwargs
-    :param entity
-    """
     keys = kwargs.keys()
     for key in keys:
         exec("entity.{0} = kwargs['{0}']".format(key))
@@ -25,14 +20,6 @@ def cascade_soft_delete(parent_model, child, parent_id):
 def listen_for_after_flush_event(target, child, parent_id):
     @event.listens_for(db_session, "after_flush", once=True)
     def receive_after_flush(session, context):
-        """
-        Function to update related child data after a delete
-        mutation has been run.
-        The check statement on line 42 caters for the difference
-        in naming of room_resource folder and Resource class
-            :param session:
-            :param context:
-        """
         if target.state == 'archived':
             child_model = getattr(api, child)
             child_object = getattr(

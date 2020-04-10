@@ -13,11 +13,11 @@ class Query(
 
 
 class Mutation(
-    role.schema.Mutation,
+    api.role.schema.Mutation,
     api.user.schema.Mutation
 ):
     """Root for graphql mutations"""
     pass
 
 
-schema = graphene.Schema(query=Query, mutation=Muta)
+schema = graphene.Schema(query=Query, mutation=Mutation)
