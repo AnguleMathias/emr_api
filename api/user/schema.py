@@ -58,7 +58,7 @@ class DeleteUser(graphene.Mutation):
 
     user = graphene.Field(User)
 
-    @Auth.user_roles('Admin', 'Doctor', 'Patient')
+    @Auth.user_roles('Admin', 'Doctor', 'Default User')
     def mutate(self, info, email, **kwargs):
         if not verify_email(email):
             raise GraphQLError("Invalid email format")
@@ -90,7 +90,7 @@ class ChangeUserRole(graphene.Mutation):
 
     user = graphene.Field(User)
 
-    @Auth.user_roles('Admin', 'Doctor', 'Patient')
+    @Auth.user_roles('Admin', 'Doctor', 'Default User')
     def mutate(self, info, email, **kwargs):
         query_user = User.get_query(info)
         active_user = query_user.filter(UserModel.state == "active")

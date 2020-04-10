@@ -48,9 +48,6 @@ class Authentication:
             }), 401
 
     def get_user_details_from_api(self, email, *expected_args):
-        """accepts a users email and makes a call to the Andela api
-            and returns the users information
-        """
         try:
             headers = {"Authorization": 'Bearer ' + self.get_token()}
             data = requests.get(
@@ -72,6 +69,38 @@ class Authentication:
                 handle_http_error(message, status, expected_args)
             else:
                 handle_http_error(message, status, expected_args)
+
+    def save_user(self,  email, *expected_args):
+        try:
+            email = self.user_info['email']
+            name = self.user_info['name']
+            picture = self.user_info['picture']
+            user = User.query.filter_by(email=email).first()
+            role = Role.query.filter_by(role='Default User').first()
+            if not role:
+                role = Role(role='Default User')
+                role.save()
+
+            if not user:
+                try:
+                    response = self.get_user_details_from_api(
+                        email, *expected_args)
+                    user_data = User(email=email, name=name, picture=picture)
+                    user_data.roles.append(role)
+
+                    for value in response['values']:
+                        if user_data.email == value["email"]:
+                            if value['location']:  # pragma: no cover
+                                check_and_add_location(
+                                    value['location']['name'])
+                    notification_settings = NotificationModel(
+                        user_id=user_data.id)
+                    notification_settings.save()
+                except Exception as e:  # noqa
+                    db_session.rollback()
+        except SQLAlchemyError:  # pragma: no cover
+            pass
+        return True
 
 
 Auth = Authentication()
