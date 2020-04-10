@@ -88,8 +88,6 @@ class Authentication:
                     user_data = User(email=email, name=name, picture=picture)
                     user_data.roles.append(role)
 
-                    for value in response['values']:
-                        if user_data.email == value["email"]:
                 except Exception as e:  # noqa
                     db_session.rollback()
         except SQLAlchemyError:  # pragma: no cover

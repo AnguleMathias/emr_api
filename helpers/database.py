@@ -8,7 +8,8 @@ import sys
 sys.path.append(os.getcwd())
 
 config_name = os.getenv('APP_SETTINGS')
-database_uri = config.get(config_name).DB_URI
+print('here', config_name)
+database_uri = config.get(config_name).SQLALCHEMY_DATABASE_URI
 engine = create_engine(database_uri, convert_unicode=True)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
