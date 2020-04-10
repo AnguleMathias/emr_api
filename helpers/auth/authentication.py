@@ -11,7 +11,11 @@ from graphql import GraphQLError
 from api.user.models import User
 from api.role.models import Role
 from helpers.connection.connection_error_handler import handle_http_error
+from helpers.database import db_session
 from utilities.utility import StateType
+
+api_url = "https://localhost:5000/api/v1/"
+
 
 class Authentication:
     def get_token(self):
@@ -42,3 +46,32 @@ class Authentication:
                 'message':
                 'Invalid token. Please Provide a valid token!'
             }), 401
+
+    def get_user_details_from_api(self, email, *expected_args):
+        """accepts a users email and makes a call to the Andela api
+            and returns the users information
+        """
+        try:
+            headers = {"Authorization": 'Bearer ' + self.get_token()}
+            data = requests.get(
+                api_url + "users?email=%s"
+                % email, headers=headers)
+            response = json.loads(data.content.decode("utf-8"))
+
+            return response
+        except requests.exceptions.ConnectionError:
+            message = "Failed internet connection"
+            status = 408
+            handle_http_error(message, status, expected_args)
+
+        if 'error' in response:
+            message = response['error']
+            status = 401
+            if(message == "invalid token"):
+                message = "You don't have a valid credentials to perform this action"
+                handle_http_error(message, status, expected_args)
+            else:
+                handle_http_error(message, status, expected_args)
+
+
+Auth = Authentication()
