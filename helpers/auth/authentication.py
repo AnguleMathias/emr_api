@@ -90,17 +90,48 @@ class Authentication:
 
                     for value in response['values']:
                         if user_data.email == value["email"]:
-                            if value['location']:  # pragma: no cover
-                                check_and_add_location(
-                                    value['location']['name'])
-                    notification_settings = NotificationModel(
-                        user_id=user_data.id)
-                    notification_settings.save()
                 except Exception as e:  # noqa
                     db_session.rollback()
         except SQLAlchemyError:  # pragma: no cover
             pass
         return True
+
+    def user_roles(self, *expected_args):  # noqa: C901
+        """ User roles """
+
+        def decorator(func):
+            @wraps(func)
+            def wrapper(*args, **kwargs):
+                user_data = self.decode_token()
+                if type(user_data) is dict:
+                    email = user_data['email']
+
+                    try:
+                        user = User.query.filter_by(email=email).first()
+                    except Exception:
+                        raise GraphQLError("The database cannot be reached")
+
+                    if user and user.state != StateType.active:  # pragma: no cover # noqa
+                        raise GraphQLError(
+                            "Your account is not active, please contact an admin")  # noqa
+
+                    if not user:
+                        self.save_user(email, *expected_args)
+                        user = User.query.filter_by(email=email).first()
+                    if user.roles and user.roles[0].role in expected_args:
+                        return func(*args, **kwargs)
+                    else:
+                        message = (
+                            'You are not authorized to perform this action')
+                        status = 401
+                        handle_http_error(message, status, expected_args)
+
+                else:
+                    raise GraphQLError(user_data[0].data)
+
+            return wrapper
+
+        return decorator
 
 
 Auth = Authentication()
