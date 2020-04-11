@@ -10,7 +10,7 @@ from helpers.auth.authentication import Auth
 from utilities.file_reader import read_log_file
 
 
-def creat_app(config_name):
+def create_app(config_name):
     app = Flask(__name__)
     CORS(app)
     FlaskJSON(app)
