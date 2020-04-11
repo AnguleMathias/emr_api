@@ -15,7 +15,7 @@ def create_app(config_name):
     CORS(app)
     FlaskJSON(app)
     app.config.from_object(config[config_name])
-    config_name[config_name].init_app(app)
+    config[config_name].init_app(app)
 
     @app.route("/", methods=['GET'])
     def index():
