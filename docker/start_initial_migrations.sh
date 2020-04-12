@@ -1,5 +1,5 @@
 #!/bin/bash
-while ! nc -z database 5432; do
+while ! nc -z database 5434; do
   sleep 0.1
 done
 cd /app
@@ -10,5 +10,5 @@ then
     echo "No migration message..."
 else
     alembic revision --autogenerate -m "$MESSAGE"
-	      alembic upgrade head
+	    alembic upgrade head
 fi

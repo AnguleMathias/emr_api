@@ -20,10 +20,10 @@ fileConfig(config.config_file_name)
 import os
 import sys
 
-database_url = os.getenv('SQLALCHEMY_DATABASE_URI')
+# database_url = os.getenv('SQLALCHEMY_DATABASE_URI')
 
 sys.path.append(os.getcwd())
-config.set_main_option('sqlalchemy.url', database_url)
+config.set_main_option('sqlalchemy.url', 'postgresql://emr_user:password@database/emr_user')
 
 from helpers.database import Base
 from api.user.models import User

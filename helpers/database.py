@@ -7,12 +7,12 @@ import os
 import sys
 sys.path.append(os.getcwd())
 
-config_name = os.getenv('APP_SETTINGS')
-database_uri = config.get(config_name).SQLALCHEMY_DATABASE_URI
-engine = create_engine(database_uri, convert_unicode=True)
-db_session = scoped_session(sessionmaker(autocommit=False,
-                                         autoflush=False,
-                                         bind=engine))
+# config_name = os.getenv('APP_SETTINGS')
+# database_uri = config.get(config_name).SQLALCHEMY_DATABASE_URI
+engine = create_engine(
+    'postgresql://emr_user:password@database/emr_user', convert_unicode=True)
+db_session = scoped_session(sessionmaker(
+    autocommit=False, autoflush=False, bind=engine))
 
 DeclarativeBase = declarative_base()
 DeclarativeBase.query = db_session.query_property()
