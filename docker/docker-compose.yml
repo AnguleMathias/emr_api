@@ -3,7 +3,10 @@ services:
   database:
     restart: always
     image: postgres:10.1
-    
+    environment:
+      - POSTGRES_USER=emr_user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=emr_user    
     volumes:
       - ../emr_user:/var/lib/postgresql/data
     ports:
