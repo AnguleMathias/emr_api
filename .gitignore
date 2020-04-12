@@ -127,10 +127,8 @@ users.json
 dump.rdb
 
 # logs
-celery.err.log
-celery.out.log
-mrm.err.log
-mrm.out.log
+emr.err.log
+emr.out.log
 
 # database
 emr_user/
