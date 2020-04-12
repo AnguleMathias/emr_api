@@ -287,7 +287,7 @@ uamqp==1.1.0rc1
 unicodecsv==0.14.1
 Unidecode==1.1.1
 uritemplate==3.0.0
-urllib3==1.21.1
+urllib3==1.24.2
 uuid==1.30
 validators==0.14.3
 vine==1.1.4
