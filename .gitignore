@@ -133,7 +133,7 @@ mrm.err.log
 mrm.out.log
 
 # database
-converge_db/
+emr_user/
 
 # google calendar data
 events.json

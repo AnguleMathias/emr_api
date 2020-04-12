@@ -68,15 +68,6 @@ import:
 	@ docker cp $(dump) emr_user:/
 	@ docker-compose -f ${DEV_COMPOSE_FILE} exec database /start_db_import.sh $(dump)
 
-create-test-database:
-	@ echo 'create test database...'
-	@ docker cp ${DEV_FOLDER}/create_test_db.sh emr_user:/
-	@ docker-compose -f ${DEV_COMPOSE_FILE} exec -u root database /create_test_db.sh
-
-test:
-	@ echo 'start tests...'
-	@ docker-compose -f ${DEV_COMPOSE_FILE} exec app ${DEV_FOLDER}/start_tests.sh "$(test)"
-
 ssh:
 	@ echo 'ssh...'
 	@ docker-compose -f ${DEV_COMPOSE_FILE} exec $(service) /bin/bash

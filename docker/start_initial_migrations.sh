@@ -10,5 +10,5 @@ then
     echo "No migration message..."
 else
     alembic revision --autogenerate -m "$MESSAGE"
-	alembic upgrade head
+	      alembic upgrade head
 fi

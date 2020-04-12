@@ -1,0 +1,324 @@
+[2020-04-11 21:52:47 +0000] [75] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 21:52:47 +0000] [75] [INFO] Listening at: http://0.0.0.0:8000 (75)
+[2020-04-11 21:52:47 +0000] [75] [INFO] Using worker: gevent
+[2020-04-11 21:52:47 +0000] [78] [INFO] Booting worker with pid: 78
+[2020-04-11 21:52:47 +0000] [78] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 21:52:47 +0000] [78] [INFO] Worker exiting (pid: 78)
+[2020-04-11 21:52:47 +0000] [75] [INFO] Shutting down: Master
+[2020-04-11 21:52:47 +0000] [75] [INFO] Reason: Worker failed to boot.
+[2020-04-11 21:52:48 +0000] [85] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 21:52:48 +0000] [85] [INFO] Listening at: http://0.0.0.0:8000 (85)
+[2020-04-11 21:52:48 +0000] [85] [INFO] Using worker: gevent
+[2020-04-11 21:52:48 +0000] [88] [INFO] Booting worker with pid: 88
+[2020-04-11 21:52:48 +0000] [88] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 21:52:48 +0000] [88] [INFO] Worker exiting (pid: 88)
+[2020-04-11 21:52:48 +0000] [85] [INFO] Shutting down: Master
+[2020-04-11 21:52:48 +0000] [85] [INFO] Reason: Worker failed to boot.
+[2020-04-11 21:52:51 +0000] [95] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 21:52:51 +0000] [95] [INFO] Listening at: http://0.0.0.0:8000 (95)
+[2020-04-11 21:52:51 +0000] [95] [INFO] Using worker: gevent
+[2020-04-11 21:52:51 +0000] [98] [INFO] Booting worker with pid: 98
+[2020-04-11 21:52:51 +0000] [98] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 21:52:51 +0000] [98] [INFO] Worker exiting (pid: 98)
+[2020-04-11 21:52:51 +0000] [95] [INFO] Shutting down: Master
+[2020-04-11 21:52:51 +0000] [95] [INFO] Reason: Worker failed to boot.
+[2020-04-11 21:52:54 +0000] [105] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 21:52:54 +0000] [105] [INFO] Listening at: http://0.0.0.0:8000 (105)
+[2020-04-11 21:52:54 +0000] [105] [INFO] Using worker: gevent
+[2020-04-11 21:52:54 +0000] [108] [INFO] Booting worker with pid: 108
+[2020-04-11 21:52:54 +0000] [108] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 21:52:54 +0000] [108] [INFO] Worker exiting (pid: 108)
+[2020-04-11 21:52:54 +0000] [105] [INFO] Shutting down: Master
+[2020-04-11 21:52:54 +0000] [105] [INFO] Reason: Worker failed to boot.
+[2020-04-11 22:04:31 +0000] [73] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 22:04:31 +0000] [73] [INFO] Listening at: http://0.0.0.0:8000 (73)
+[2020-04-11 22:04:31 +0000] [73] [INFO] Using worker: gevent
+[2020-04-11 22:04:31 +0000] [76] [INFO] Booting worker with pid: 76
+[2020-04-11 22:04:31 +0000] [76] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 22:04:31 +0000] [76] [INFO] Worker exiting (pid: 76)
+[2020-04-11 22:04:31 +0000] [73] [INFO] Shutting down: Master
+[2020-04-11 22:04:31 +0000] [73] [INFO] Reason: Worker failed to boot.
+[2020-04-11 22:04:33 +0000] [83] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 22:04:33 +0000] [83] [INFO] Listening at: http://0.0.0.0:8000 (83)
+[2020-04-11 22:04:33 +0000] [83] [INFO] Using worker: gevent
+[2020-04-11 22:04:33 +0000] [86] [INFO] Booting worker with pid: 86
+[2020-04-11 22:04:33 +0000] [86] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 22:04:33 +0000] [86] [INFO] Worker exiting (pid: 86)
+[2020-04-11 22:04:33 +0000] [83] [INFO] Shutting down: Master
+[2020-04-11 22:04:33 +0000] [83] [INFO] Reason: Worker failed to boot.
+[2020-04-11 22:04:34 +0000] [93] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 22:04:34 +0000] [93] [INFO] Listening at: http://0.0.0.0:8000 (93)
+[2020-04-11 22:04:34 +0000] [93] [INFO] Using worker: gevent
+[2020-04-11 22:04:34 +0000] [96] [INFO] Booting worker with pid: 96
+[2020-04-11 22:04:34 +0000] [96] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 22:04:34 +0000] [96] [INFO] Worker exiting (pid: 96)
+[2020-04-11 22:04:34 +0000] [93] [INFO] Shutting down: Master
+[2020-04-11 22:04:34 +0000] [93] [INFO] Reason: Worker failed to boot.
+[2020-04-11 22:04:36 +0000] [103] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 22:04:36 +0000] [103] [INFO] Listening at: http://0.0.0.0:8000 (103)
+[2020-04-11 22:04:36 +0000] [103] [INFO] Using worker: gevent
+[2020-04-11 22:04:36 +0000] [106] [INFO] Booting worker with pid: 106
+[2020-04-11 22:04:36 +0000] [106] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 22:04:36 +0000] [106] [INFO] Worker exiting (pid: 106)
+[2020-04-11 22:04:36 +0000] [103] [INFO] Shutting down: Master
+[2020-04-11 22:04:36 +0000] [103] [INFO] Reason: Worker failed to boot.
+[2020-04-11 22:04:40 +0000] [113] [INFO] Starting gunicorn 20.0.4
+[2020-04-11 22:04:40 +0000] [113] [INFO] Listening at: http://0.0.0.0:8000 (113)
+[2020-04-11 22:04:40 +0000] [113] [INFO] Using worker: gevent
+[2020-04-11 22:04:40 +0000] [116] [INFO] Booting worker with pid: 116
+[2020-04-11 22:04:40 +0000] [116] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/local/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/app/manage.py", line 3, in <module>
+    from flask_script import Manager, Shell
+ModuleNotFoundError: No module named 'flask_script'
+[2020-04-11 22:04:40 +0000] [116] [INFO] Worker exiting (pid: 116)
+[2020-04-11 22:04:40 +0000] [113] [INFO] Shutting down: Master
+[2020-04-11 22:04:40 +0000] [113] [INFO] Reason: Worker failed to boot.

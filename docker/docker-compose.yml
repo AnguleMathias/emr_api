@@ -3,21 +3,23 @@ services:
   database:
     restart: always
     image: postgres:10.1
-    environment:
-      - POSTGRES_USER=emr_user
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=emr_user
+    
     volumes:
-      - ../../emr_user:/var/lib/postgresql/data
+      - ../emr_user:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     expose:
       - "5432"
     container_name: emr_user
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    container_name: emr_redis
   app:
     restart: always
     build:
-      context: ../../
+      context: ../
       dockerfile: docker/Dockerfile
     ports:
       - "8000:8000"
