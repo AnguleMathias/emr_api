@@ -3,7 +3,7 @@ setup:
     - plan: heroku-postgresql
       as: DATABASE
 build:
-  docker: Dockerfile
+  docker: "Dockerfile"
   config:
     POSTGRES_USER: emr_user
     POSTGRES_PASSWORD: password
