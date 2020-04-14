@@ -1,1 +1,1 @@
-web: bundle exec make status
+web: make build
