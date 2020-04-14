@@ -1,0 +1,1 @@
+web: bundle exec make status
