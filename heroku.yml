@@ -1,0 +1,12 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+build:
+  docker: Dockerfile
+  config:
+    POSTGRES_USER: emr_user
+    POSTGRES_PASSWORD: password
+    POSTGRES_DB: emr_user
+run:
+  web: bundle exec puma -C config/puma.rb

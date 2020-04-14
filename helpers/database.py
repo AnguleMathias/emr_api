@@ -10,7 +10,7 @@ sys.path.append(os.getcwd())
 # config_name = os.getenv('APP_SETTINGS')
 # database_uri = config.get(config_name).SQLALCHEMY_DATABASE_URI
 engine = create_engine(
-    'postgresql://emr_user:password@database/emr_user', convert_unicode=True)
+    'postgres://gymircrjswhdep:b262a80f089e589f793e26553e4b50b575506c4b95ed2a5d3e5040e4f71abf32@ec2-54-88-130-244.compute-1.amazonaws.com:5432/d2b17ke4gt83gq', convert_unicode=True)
 db_session = scoped_session(sessionmaker(
     autocommit=False, autoflush=False, bind=engine))
 

@@ -23,7 +23,8 @@ import sys
 # database_url = os.getenv('SQLALCHEMY_DATABASE_URI')
 
 sys.path.append(os.getcwd())
-config.set_main_option('sqlalchemy.url', 'postgresql://emr_user:password@database/emr_user')
+# config.set_main_option('sqlalchemy.url', 'postgresql://emr_user:password@database/emr_user')
+config.set_main_option('sqlalchemy.url', 'postgres://gymircrjswhdep:b262a80f089e589f793e26553e4b50b575506c4b95ed2a5d3e5040e4f71abf32@ec2-54-88-130-244.compute-1.amazonaws.com:5432/d2b17ke4gt83gq')
 
 from helpers.database import Base
 from api.user.models import User
