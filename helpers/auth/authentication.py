@@ -14,7 +14,7 @@ from helpers.connection.connection_error_handler import handle_http_error
 from helpers.database import db_session
 from utilities.utility import StateType
 
-api_url = "https://localhost:5000/api/v1/"
+api_url = "https://localhost:8000/emr"
 
 
 class Authentication:
